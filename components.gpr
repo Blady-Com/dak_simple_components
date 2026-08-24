@@ -37,16 +37,16 @@ project Components is
 
    case Tables.Target_OS is
       when "Windows" | "Windows_NT" =>
-         for Languages use ("Ada");
+         for Languages use ("Ada", "C");
          Dir_List := Dir_List & "os/windows";
       when "Linux" | "UNIX" | "auto" =>
          for Languages use ("Ada", "C");
          Dir_List := Dir_List & "os/linux";
       when "OSX" =>
-         for Languages use ("Ada");
+         for Languages use ("Ada", "C");
          Dir_List := Dir_List & "os/pthreads";
       when "FreeBSD" =>
-         for Languages use ("Ada");
+         for Languages use ("Ada", "C");
          Dir_List := Dir_List & "os/pthreads";
          for Library_Options use ("-lpthread");
    end case;
